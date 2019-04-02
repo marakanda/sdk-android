@@ -55,7 +55,7 @@ dependencies {
 }
 ```
 
-**Note**: The DDC SDK has [dependencies of its own](https://artifacts.ebuilder.io/repository/ebuilder-maven/io/ebuilder/mobile/services/ddc-sdk/1.2.0.255/ddc-sdk-1.2.0.255.pom). If you run into build or runtime issues because your project depends on an older version of the Android support library, you can exclude the one required by DDC: 
+**Note**: The DDC SDK has [dependencies of its own](https://artifacts.ebuilder.io/repository/ebuilder-external-android/io/ebuilder/mobile/services/ddc-sdk/1.2.0.255/ddc-sdk-1.2.0.255.pom). If you run into build or runtime issues because your project depends on an older version of the Android support library, you can exclude the one required by DDC: 
 
 ```groovy
 dependencies {
