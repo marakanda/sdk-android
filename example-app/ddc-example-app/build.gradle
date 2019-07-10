@@ -22,7 +22,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-ads:11.6.2"
     implementation "com.google.android.gms:play-services-identity:11.6.2"
 
-    implementation ("io.ebuilder.mobile.services:ddc-sdk:1.2.0.255") {
+    implementation ("io.ebuilder.mobile.services:ddc-sdk:2.0.0.317") {
         exclude group: "com.android.support"
     }
 }
