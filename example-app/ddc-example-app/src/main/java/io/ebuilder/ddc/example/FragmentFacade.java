@@ -1,7 +1,7 @@
 package io.ebuilder.ddc.example;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by <a href="mailto:dmitry.gorohov@ebuilder.com">Dmitry Gorohov</a>

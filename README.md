@@ -1,7 +1,7 @@
 # Android
 
 The Device Data Collector (**DDC**) for Android manual and [example implementation](./example-app).
-Latest release: 1.2.0.255.
+Latest release: 2.0.0.323.
 
 [Compatibility](#compatibility)<br/>[Project Setup](#project-setup)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Permissions](#permissions)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Gradle Dependencies](#gradle-dependencies)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Proguard](#proguard)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Content Provider configuration](#content-provider-configuration)<br/>[Initialization](#initialization)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Associating collected data with a user/device identity](#associating-collected-data-with-a-userdevice-identity)<br/>
 [Data collection](#data-collection)<br/>
@@ -51,16 +51,16 @@ Add DDC SDK:
 
 ```groovy
 dependencies {
-    implementation "io.ebuilder.mobile.services:ddc-sdk:1.2.0.255"
+    implementation "io.ebuilder.mobile.services:ddc-sdk:2.0.0.323"
 }
 ```
 
-**Note**: The DDC SDK has [dependencies of its own](https://artifacts.ebuilder.io/repository/ebuilder-external-android/io/ebuilder/mobile/services/ddc-sdk/1.2.0.255/ddc-sdk-1.2.0.255.pom). If you run into build or runtime issues because your project depends on an older version of the Android support library, you can exclude the one required by DDC: 
+**Note**: The DDC SDK has [dependencies of its own](https://artifacts.ebuilder.io/repository/ebuilder-external-android/io/ebuilder/mobile/services/ddc-sdk/2.0.0.323/ddc-sdk-2.0.0.323.pom). If you run into build or runtime issues because your project depends on an older version of the Android legacy support library, you might want to exclude the one required by DDC: 
 
 ```groovy
 dependencies {
-    implementation ("io.ebuilder.mobile.services:ddc-sdk:1.2.0.255") {
-        exclude group: "com.android.support"
+    implementation ("io.ebuilder.mobile.services:ddc-sdk:2.0.0.323") {
+        exclude group: "androidx.legacy"
     }
 }
 ```
@@ -114,7 +114,7 @@ DeviceDataCollector ddc = DeviceDataCollector.getDefault(context, "YOUR_LICENSE_
 
 DeviceDataCollector.getDefault(...) has the following mandatory arguments:
 * *context* (Context) : application context
-* *licenseKey* (String) : the licence key provided by eBuilder
+* *licenseKey* (String) : the licence key provided by Marakanda
 
 Enable SDK logging (for debugging purposes):
 
@@ -127,8 +127,8 @@ The following properties can be used to optionally provide additional user/devic
 
 | Name           | Description                                                  |
 | -------------- | ------------------------------------------------------------ |
-| advertisingId  | The [Android advertising ID](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/package-summary) of a device. |
-| externalUserId | The host application's user identity. For example a (unique) user name, a user ID, an e-mail - or a hash thereof. |
+| advertisingID  | The [Android advertising ID](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/package-summary) of a device. |
+| externalUserID | The host application's user identity. For example a (unique) user name, a user ID, an e-mail - or a hash thereof. |
 | phoneNumber    | The user's phone number.                                     |
 
 These can be set in any order, at any time (once there is a ddc instance) and as many times as needed.
@@ -136,8 +136,8 @@ These can be set in any order, at any time (once there is a ddc instance) and as
 Example:
 
 ```java
-ddc.advertisingId(adID);
-ddc.externalUserId("c23911a2-c455-4a59-96d0-c6fea09176b8"); 
+ddc.advertisingID(adID);
+ddc.externalUserID("c23911a2-c455-4a59-96d0-c6fea09176b8"); 
 ddc.phoneNumber("+1234567890");
 ```
 

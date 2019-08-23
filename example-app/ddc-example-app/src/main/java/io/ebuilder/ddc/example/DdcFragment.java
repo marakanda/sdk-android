@@ -5,8 +5,8 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +22,7 @@ public class DdcFragment extends Fragment {
 
     private static DeviceDataCollector ddc;
 
+    // needs to be valid
     private static final String LICENSE_KEY = "YOUR_LICENCE_KEY";
 
     private static class setAdID extends AsyncTask<Void, Void, Void> {
@@ -34,10 +35,10 @@ public class DdcFragment extends Fragment {
             try {
                 AdvertisingIdClient.Info info =  AdvertisingIdClient.getAdvertisingIdInfo(ddcFragmentWeakReference.get().getContext());
                 if (!info.isLimitAdTrackingEnabled()) {
-                    ddc.advertisingId(info.getId());
+                    ddc.advertisingID(info.getId());
                 }
                 else {
-                    ddc.advertisingId("00000000-0000-0000-0000-000000000000");
+                    ddc.advertisingID("00000000-0000-0000-0000-000000000000");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -58,7 +59,7 @@ public class DdcFragment extends Fragment {
 
         ddc = DeviceDataCollector.getDefault(getContext().getApplicationContext(), LICENSE_KEY);
         ddc.loggingEnabled(true);
-        ddc.externalUserId("c23911a2-c455-4a59-96d0-c6fea09176b8");
+        ddc.externalUserID("c23911a2-c455-4a59-96d0-c6fea09176b8");
         ddc.phoneNumber("+1234567890");
         new setAdID(this).execute();
 
