@@ -23,6 +23,6 @@ dependencies {
     implementation "com.google.android.gms:play-services-ads:11.6.2"
     implementation "com.google.android.gms:play-services-identity:11.6.2"
 
-    implementation "io.ebuilder.mobile.services:ddc-sdk:2.1.0.334"
+    implementation "io.ebuilder.mobile.services:ddc-sdk:2.2.0.366"
 }
 
