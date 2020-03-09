@@ -1,7 +1,7 @@
 # Android
 
 The Device Data Collector (**DDC**) for Android manual and [example implementation](./example-app).
-Latest release: 2.2.0.366.
+Latest release: 2.3.0.379.
 
 [Compatibility](#compatibility)<br/>[Project Setup](#project-setup)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Permissions](#permissions)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Gradle Dependencies](#gradle-dependencies)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Proguard](#proguard)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Content Provider configuration](#content-provider-configuration)<br/>[Initialization](#initialization)<br/>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Associating collected data with a user/device identity](#associating-collected-data-with-a-userdevice-identity)<br/>
 [Data collection](#data-collection)<br/>
@@ -51,15 +51,15 @@ Add DDC SDK:
 
 ```groovy
 dependencies {
-    implementation "io.ebuilder.mobile.services:ddc-sdk:2.2.0.366"
+    implementation "io.ebuilder.mobile.services:ddc-sdk:2.3.0.379"
 }
 ```
 
-**Note**: The DDC SDK has [dependencies of its own](https://artifacts.ebuilder.io/repository/ebuilder-external-android/io/ebuilder/mobile/services/ddc-sdk/2.2.0.366/ddc-sdk-2.2.0.366.pom). If you run into build or runtime issues because your project depends on an older version of the Android legacy support library, you might want to exclude the one required by DDC: 
+**Note**: The DDC SDK has [dependencies of its own](https://artifacts.ebuilder.io/repository/ebuilder-external-android/io/ebuilder/mobile/services/ddc-sdk/2.3.0.379/ddc-sdk-2.3.0.379.pom). If you run into build or runtime issues because your project depends on an older version of the Android legacy support library, you might want to exclude the one required by DDC: 
 
 ```groovy
 dependencies {
-    implementation ("io.ebuilder.mobile.services:ddc-sdk:2.2.0.366") {
+    implementation ("io.ebuilder.mobile.services:ddc-sdk:2.3.0.379") {
         exclude group: "androidx.legacy"
     }
 }
